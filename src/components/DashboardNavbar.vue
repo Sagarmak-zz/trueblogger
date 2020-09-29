@@ -1,7 +1,9 @@
 <template>
   <div class="dashboard-navbar">
     <v-app-bar app color="primary" elevate-on-scroll>
-      <div class="d-flex align-center white--text">{{ appName }}</div>
+      <div class="app-logo">
+        <img :src="getLogoPath" />
+      </div>
     </v-app-bar>
   </div>
 </template>
@@ -14,9 +16,20 @@ export default {
       default: "",
       type: String
     }
+  },
+  computed: {
+    getLogoPath() {
+      return "/img/trueblogger-white.png";
+    }
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.app-logo {
+  display: inherit;
+  img {
+    width: inherit;
+  }
+}
 </style>
