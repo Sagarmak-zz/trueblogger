@@ -27,7 +27,7 @@ export default {
     breakpointMargin() {
       switch (this.breakpoint) {
         case "xs":
-          return "mt-4 mx-4";
+          return "mt-4 mx-2";
         case "sm":
           return "mt-7 mx-7";
         case "md":

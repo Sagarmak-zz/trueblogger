@@ -17,7 +17,7 @@ export default new Vuex.Store({
   },
   mutations: {
     storePosts(state, payload) {
-      state.posts = payload.posts;
+      state.posts = [...state.posts, ...payload.posts];
     }
   },
   getters: {

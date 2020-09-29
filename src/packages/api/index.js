@@ -5,8 +5,9 @@ export default {
   posts(data) {
     return HTTP.get(EP.POSTS, {
       params: {
-        number: data.noOfPostsInAPage,
-        page: data.pageNo
+        number: data.number,
+        offset: data.offset || 0,
+        page: data.page
       }
     }).then(({ data }) => data);
   }
