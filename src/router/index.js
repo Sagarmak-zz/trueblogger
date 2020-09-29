@@ -1,14 +1,26 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Dashboard from "../views/Dashboard.vue";
+import DashboardContent from "../views/DashboardContent.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Dashboard",
-    component: Dashboard
+    component: Dashboard,
+    children: [
+      {
+        path: "/",
+        name: "DashboardContent",
+        component: DashboardContent
+      }
+      // {
+        // path: "/",
+        // name: "Dashboard",
+        // component: Dashboard
+      // }
+    ]
   }
   // {
   //   path: "/about",

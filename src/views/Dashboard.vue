@@ -2,7 +2,9 @@
   <div class="home">
     <DashboardNavbar :app-name="appName" />
 
-    <v-main class="mb-5" :class="breakpointMargin">Main content goes here</v-main>
+    <v-main class="mb-5" :class="breakpointMargin">
+      <router-view />
+    </v-main>
   </div>
 </template>
 
