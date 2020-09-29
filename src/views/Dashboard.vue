@@ -47,12 +47,12 @@ export default {
         case "xs":
           return "mt-4 mx-2";
         case "sm":
-          return "mt-7 mx-7";
+          return "mt-4 mx-7";
         case "md":
-          return "mt-9 mx-9";
+          return "mt-4 mx-9";
         case "lg":
         case "xl":
-          return "mt-11 mx-11";
+          return "mt-4 mx-11";
 
         default:
           return "w-75";

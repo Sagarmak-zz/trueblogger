@@ -1,11 +1,9 @@
 <template>
-  <div class="dashboard-navbar">
-    <v-app-bar app color="primary" elevate-on-scroll>
-      <div class="app-logo">
-        <img :src="getLogoPath" />
-      </div>
-    </v-app-bar>
-  </div>
+  <v-app-bar short app color="primary" elevate-on-scroll class="dashboard-navbar px-7">
+    <div class="app-logo">
+      <v-img :src="getLogoPath" />
+    </div>
+  </v-app-bar>
 </template>
 
 <script>
