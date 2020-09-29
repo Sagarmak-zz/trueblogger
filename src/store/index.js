@@ -9,14 +9,12 @@ export default new Vuex.Store({
     posts: []
   },
   actions: {
-    getPosts(context, data) {
-      return api.posts(data).then(response => {
-        context.commit('storePosts', response);
-      });
+    getPosts (context, data) {
+      return api.posts(data).then(response => context.commit('storePosts', response));
     }
   },
   mutations: {
-    storePosts(state, payload) {
+    storePosts (state, payload) {
       state.posts = [...state.posts, ...payload.posts];
     }
   },

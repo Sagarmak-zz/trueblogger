@@ -17,6 +17,24 @@ export default {
   components: {
     DashboardNavbar
   },
+  data() {
+    return {
+      noOfPostsInAPage: 25,
+      pageNo: 1
+    };
+  },
+  created() {
+    this.getPosts(this.noOfPostsInAPage, null, this.pageNo);
+  },
+  methods: {
+    getPosts(number = 20, offset = 0, page = 1) {
+      this.$store.dispatch("getPosts", {
+        number,
+        offset,
+        page
+      });
+    }
+  },
   computed: {
     appName() {
       return config.appTitle();
