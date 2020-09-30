@@ -1,0 +1,62 @@
+<template>
+  <v-col cols="12">
+    <v-card hover class="dashboard-content__main__card-large" flat :to="{ name: 'Blog', params: { blogId: post.ID }}">
+      <v-row>
+        <v-col class="py-0 py-lg-2" cols="12" :xs="12" :sm="7" :md="7" :lg="7" :xl="7">
+          <v-img :src="post.featured_image" max-height="400" aspect-ratio="2" class="rounded">
+            <template v-slot:placeholder>
+              <v-sheet color="grey lighten-4" class="px-3 pt-3 pb-3 fill-height">
+                <v-skeleton-loader class="mx-auto" type="image"></v-skeleton-loader>
+              </v-sheet>
+            </template>
+          </v-img>
+        </v-col>
+        <v-col
+          cols="12"
+          :xs="12"
+          :sm="5"
+          :md="5"
+          :lg="5"
+          :xl="5"
+          class="py-0 dashboard-content__main__card-large__body"
+        >
+          <div class="dashboard-content__main__card-large__body-header px-4 py-md-4">
+            <div
+              class="text-h5 text-sm-h5 text-md-h4 text-xl-h3 pt-4 pt-sm-0 pb-2 pb-sm-1 pb-md-2 py-xl-4 font-weight-medium"
+              v-html="post.title"
+            ></div>
+            <div class="text-caption text-sm-caption text-md-subtitle-1 d-flex align-center">
+              <span>{{ formatDate(post.date) }} |</span>
+              <div class="chips">
+                <v-chip color="primary" small label outlined class="mx-2">Tech</v-chip>
+                <v-chip color="primary" small label outlined>Culture</v-chip>
+              </div>
+            </div>
+          </div>
+          <div
+            class="text-body-2 text-sm-subtitle-2 text-md-subtitle-2 text-lg-subtitle-1 text-xl-h6 pa-4 py-sm-1 py-md-3 py-lg-4 py-xl-6"
+            v-html="post.excerpt"
+          ></div>
+        </v-col>
+      </v-row>
+    </v-card>
+  </v-col>
+</template>
+<script>
+import Utils from "@/utils/Utils.js";
+
+export default {
+  name: "DashboardFeatureCard",
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    formatDate(date) {
+      return Utils.formatDistance(date);
+    }
+  }
+};
+</script>

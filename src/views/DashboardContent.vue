@@ -3,25 +3,27 @@
     <div v-if="isFullPageLoading" class="d-flex justify-center align-center mh-50">
       <v-progress-circular size="50" indeterminate color="primary" />
     </div>
-    <div v-else>
+    <div class="dashboard-content__main" v-else-if="posts && posts.length">
       <v-row dense>
-        <v-col v-for="post in posts" :key="post.ID" cols="12" :xs="12" :sm="6" :md="6" :lg="6">
-          <DashboardBlogCard :post="post" variant="large" />
-        </v-col>
+        <DashboardFeatureCard v-for="(post) in posts.slice(0, 1)" :post="post" :key="post.ID" />
+        <DashboardMediumCard v-for="(post) in posts.slice(1)" :post="post" :key="post.ID" />
       </v-row>
       <div class="load-more mt-2">
         <v-btn :loading="loadingMore" color="primary" @click="loadMorePosts">Load More..</v-btn>
       </div>
     </div>
+    <div v-else>No posts found</div>
   </div>
 </template>
 <script>
-import DashboardBlogCard from "@/components/DashboardBlogCard.vue";
+import DashboardFeatureCard from "@/components/DashboardFeatureCard.vue";
+import DashboardMediumCard from "@/components/DashboardMediumCard.vue";
 
 export default {
   name: "DashboardContent",
   components: {
-    DashboardBlogCard
+    DashboardFeatureCard,
+    DashboardMediumCard
   },
   data() {
     return {
@@ -41,7 +43,7 @@ export default {
         });
     },
     loadMorePosts() {
-      this.loadingMore = true
+      this.loadingMore = true;
       // No of posts, Offset, page Number
       this.getPosts(4, this.posts.length, null);
     }

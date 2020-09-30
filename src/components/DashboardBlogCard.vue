@@ -1,10 +1,10 @@
 <template>
   <div class="dashboard-blog-card">
-    <v-card outlined>
+    <v-card flat>
       <v-list-item three-line>
         <v-list-item-content>
           <div class="overline mb-2">{{ formatDate(post.date) }}</div>
-          <v-list-item-title class="headline mb-1">{{ post.title }}</v-list-item-title>
+          <v-list-item-title class="headline mb-1" v-html="post.title"></v-list-item-title>
           <v-list-item-subtitle v-html="post.excerpt"></v-list-item-subtitle>
         </v-list-item-content>
 
