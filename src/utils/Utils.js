@@ -1,12 +1,12 @@
 import { format, formatDistanceToNow, parseISO } from "date-fns";
 
 export default {
-  convertToDate (date, specifiedFormat = "do MMM yyyy") {
+  formatISODate (date, specifiedFormat = "do MMM yyyy") {
     if (!date) {
       return;
     }
-
-    return format(date, specifiedFormat);
+    let isoDate = parseISO(date);
+    return format(isoDate, specifiedFormat);
   },
   formatDistance(date) {
     if (!date) {

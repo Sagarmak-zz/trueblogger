@@ -10,5 +10,8 @@ export default {
         page: data.page
       }
     }).then(({ data }) => data);
+  },
+  postById(data) {
+    return HTTP.get(`${EP.POSTS}/${data.id}`).then(({ data }) => data);
   }
 };

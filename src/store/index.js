@@ -11,6 +11,9 @@ export default new Vuex.Store({
   actions: {
     getPosts (context, data) {
       return api.posts(data).then(response => context.commit('storePosts', response));
+    },
+    getPostById (context, data) {
+      return api.postById(data).then(response => response);
     }
   },
   mutations: {

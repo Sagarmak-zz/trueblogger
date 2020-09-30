@@ -1,9 +1,11 @@
 <template>
-  <div class="home">
+  <div class="dashboard fill-height">
     <DashboardNavbar :app-name="appName" />
 
-    <v-main class="mb-5" :class="breakpointMargin">
-      <router-view />
+    <v-main class="mb-5">
+      <v-container class="mt-6">
+        <router-view />
+      </v-container>
     </v-main>
   </div>
 </template>
@@ -38,25 +40,6 @@ export default {
   computed: {
     appName() {
       return config.appTitle();
-    },
-    breakpoint() {
-      return this.$vuetify.breakpoint.name;
-    },
-    breakpointMargin() {
-      switch (this.breakpoint) {
-        case "xs":
-          return "mt-4 mx-2";
-        case "sm":
-          return "mt-4 mx-7";
-        case "md":
-          return "mt-4 mx-9";
-        case "lg":
-        case "xl":
-          return "mt-4 mx-11";
-
-        default:
-          return "w-75";
-      }
     }
   }
 };

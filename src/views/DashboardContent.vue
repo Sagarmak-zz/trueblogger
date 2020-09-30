@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-content">
-    <div v-if="isFullPageLoading" class="d-flex justify-center align-center">
+    <div v-if="isFullPageLoading" class="d-flex justify-center align-center mh-50">
       <v-progress-circular size="50" indeterminate color="primary" />
     </div>
     <div v-else>
