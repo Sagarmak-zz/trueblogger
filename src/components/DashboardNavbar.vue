@@ -8,7 +8,7 @@
       <v-menu left bottom offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-btn icon v-bind="attrs" v-on="on">
-            <v-icon color="primary">fas fa-ellipsis-v</v-icon>
+            <v-icon color="primary">fas fa-bars</v-icon>
           </v-btn>
         </template>
 
