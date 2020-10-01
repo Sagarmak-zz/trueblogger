@@ -93,5 +93,10 @@ export default {
     max-width: 44rem;
     margin: 0 auto;
   }
+
+  p {
+    font-size: inherit;
+    margin-bottom: 2rem;
+  }
 }
 </style>
