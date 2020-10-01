@@ -1,7 +1,7 @@
 <template>
   <v-app-bar short elevate-on-scroll absolute app color="white" class="dashboard-navbar">
     <v-container class="py-0 fill-height">
-      <div class="app-logo">
+      <div class="app-logo pointer" @click="$router.push({ name: 'DashboardContent' })">
         <v-img max-width="9rem" :src="getLogoPath" />
       </div>
       <v-spacer />
@@ -12,10 +12,10 @@
           </v-btn>
         </template>
 
-        <v-card max-height="700" class="pa-4">
+        <v-card class="pa-4">
           <v-card flat class="pa-4">
-            <div class="text-h6 rounded">Categories</div>
-            <v-row v-if="categories && categories.length">
+            <div class="text-h5 font-weight-medium rounded pa-xs-0 pa-sm-4">Categories</div>
+            <v-row v-if="categories && categories.length" class="px-xs-0 px-sm-4">
               <div v-for="category in categories" :key="category.ID" class="category-name">
                 <v-chip
                   label
@@ -29,8 +29,8 @@
           </v-card>
           <v-divider />
           <v-card flat class="pa-4">
-            <div class="text-h6 mt-2">Tags</div>
-            <v-row v-if="tags && tags.length">
+            <div class="text-h5 font-weight-medium mt-2 pa-xs-0 pa-sm-4">Tags</div>
+            <v-row v-if="tags && tags.length" class="pt-xs-2 px-xs-0 px-sm-4">
               <div cols="3" v-for="tag in tags" :key="tag.ID">
                 <v-chip
                   color="primary"

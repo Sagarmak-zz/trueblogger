@@ -5,7 +5,7 @@
     </div>
     <div class="wrapper" v-else-if="post && postTitle">
       <div class="head">
-        <div class="title text-h3" v-html="postTitle"></div>
+        <div class="title text-h5 text-sm-h4 text-md-h3" v-html="postTitle"></div>
         <div class="text-body-2 mt-4">
           By
           <span class="author-name">{{ authorName }}</span> |
