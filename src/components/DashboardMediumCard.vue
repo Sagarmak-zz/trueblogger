@@ -29,7 +29,7 @@
             </div>
           </div>
           <div
-            class="text-body-2 text-sm-subtitle-2 text-md-subtitle-2 text-lg-subtitle-1 text-xl-h6 pa-4 py-sm-1 py-md-3 py-lg-4 py-xl-6"
+            class="text-body-2 text-sm-body-2 text-md-subtitle-2 text-lg-subtitle-1 text-xl-h6 pa-4 py-sm-1 py-md-3 py-lg-4 py-xl-6"
             v-html="post.excerpt"
           ></div>
         </v-col>
