@@ -1,12 +1,17 @@
 <template>
   <v-col cols="12">
-    <v-card hover class="dashboard-content__main__card-large" flat :to="{ name: 'Blog', params: { blogId: post.ID }}">
+    <v-card
+      hover
+      class="dashboard-content__main__card-large"
+      flat
+      :to="{ name: 'Blog', params: { blogId: post.ID }}"
+    >
       <v-row>
         <v-col class="py-0 py-lg-2" cols="12" :xs="12" :sm="7" :md="7" :lg="7" :xl="7">
           <v-img :src="post.featured_image" max-height="400" aspect-ratio="2" class="rounded">
             <template v-slot:placeholder>
-              <v-sheet color="grey lighten-4" class="px-3 pt-3 pb-3 fill-height">
-                <v-skeleton-loader class="mx-auto" type="image"></v-skeleton-loader>
+              <v-sheet color="grey lighten-4" class="px-3 pt-3 pb-3">
+                <v-skeleton-loader class="mx-auto" height="400" type="image"></v-skeleton-loader>
               </v-sheet>
             </template>
           </v-img>
@@ -25,12 +30,18 @@
               class="text-h5 text-sm-h5 text-md-h4 text-xl-h3 pt-4 pt-sm-0 pb-2 pb-sm-1 pb-md-2 py-xl-4 font-weight-medium"
               v-html="post.title"
             ></div>
-            <div class="text-caption text-sm-caption text-md-subtitle-1 d-flex align-center">
-              <span>{{ formatDate(post.date) }} |</span>
-              <div class="chips">
-                <v-chip color="primary" small label outlined class="mx-2">Tech</v-chip>
-                <v-chip color="primary" small label outlined>Culture</v-chip>
-              </div>
+            <div class="text-caption text-sm-caption text-md-subtitle-1">
+              <span>{{ formatDate(post.date) }}</span>
+              <span v-if="Object.values(post.tags).length" class="px-2">|</span>
+              <v-chip
+                color="primary"
+                small
+                label
+                outlined
+                v-for="tag in Object.values(post.tags).slice(0, 2)"
+                :key="tag.ID"
+                class="mr-2 text-capitalize"
+              >{{ tag.name }}</v-chip>
             </div>
           </div>
           <div

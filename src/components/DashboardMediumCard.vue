@@ -6,7 +6,7 @@
           <v-img :src="post.featured_image" max-height="250" aspect-ratio="2" class="rounded">
             <template v-slot:placeholder>
               <v-sheet color="grey lighten-4" class="px-3 pt-3 pb-3 fill-height">
-                <v-skeleton-loader class="mx-auto" type="image"></v-skeleton-loader>
+                <v-skeleton-loader class="mx-auto" height="400" type="image"></v-skeleton-loader>
               </v-sheet>
             </template>
           </v-img>
@@ -15,11 +15,17 @@
           <div class="px-4">
             <div class="text-h5 pt-4 pb-2 font-weight-medium" v-html="post.title"></div>
             <div class="text-caption d-flex align-center">
-              <span>{{ formatDate(post.date) }} |</span>
-              <div class="chips">
-                <v-chip color="primary" small label outlined class="mx-2">Tech</v-chip>
-                <v-chip color="primary" small label outlined>Culture</v-chip>
-              </div>
+              <span>{{ formatDate(post.date) }}</span>
+              <span v-if="Object.values(post.tags).length" class="px-2">|</span>
+              <v-chip
+                color="primary"
+                small
+                label
+                outlined
+                v-for="tag in Object.values(post.tags).slice(0, 4)"
+                :key="tag.ID"
+                class="mr-2 text-capitalize"
+              >{{ tag.name }}</v-chip>
             </div>
           </div>
           <div

@@ -123,3 +123,7 @@ blockquote {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.v-skeleton-loader__image {
+  height: inherit;
+}

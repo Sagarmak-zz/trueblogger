@@ -8,7 +8,7 @@
         <DashboardFeatureCard v-for="(post) in posts.slice(0, 1)" :post="post" :key="post.ID" />
         <DashboardMediumCard v-for="(post) in posts.slice(1)" :post="post" :key="post.ID" />
       </v-row>
-      <div class="load-more mt-2">
+      <div v-if="showLoadMore" class="load-more mt-2">
         <v-btn :loading="loadingMore" color="primary" @click="loadMorePosts">Load More..</v-btn>
       </div>
     </div>
@@ -31,12 +31,15 @@ export default {
     };
   },
   methods: {
-    getPosts(number = 20, offset = 0, page = 1) {
+    getPosts(number = 20, offset = 0, page = 1, category = null, tag = null, newArr = false) {
       this.$store
         .dispatch("getPosts", {
           number,
           offset,
-          page
+          page,
+          category,
+          tag,
+          newArr
         })
         .finally(() => {
           this.loadingMore = false;
@@ -45,15 +48,27 @@ export default {
     loadMorePosts() {
       this.loadingMore = true;
       // No of posts, Offset, page Number
-      this.getPosts(4, this.posts.length, null);
+      this.getPosts(4, this.posts.length, null, this.category, this.tag, false);
     }
   },
   computed: {
     posts() {
       return this.$store.getters.posts;
     },
+    totalPosts() {
+      return this.$store.getters.totalPosts;
+    },
+    showLoadMore() {
+      return this.totalPosts > this.posts.length;
+    },
     isFullPageLoading() {
       return !this.posts.length;
+    },
+    category() {
+      return this.$store.getters.category;
+    },
+    tag() {
+      return this.$store.getters.tag;
     }
   }
 };

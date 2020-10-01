@@ -27,6 +27,8 @@ export default {
   },
   created() {
     this.getPosts(this.noOfPostsInAPage, null, this.pageNo);
+    this.getCategories();
+    this.getTags();
   },
   methods: {
     getPosts(number = 20, offset = 0, page = 1) {
@@ -35,6 +37,12 @@ export default {
         offset,
         page
       });
+    },
+    getCategories() {
+      this.$store.dispatch("getCategories");
+    },
+    getTags() {
+      this.$store.dispatch("getTags");
     }
   },
   computed: {
