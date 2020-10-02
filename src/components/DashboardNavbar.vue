@@ -50,19 +50,34 @@
 <script>
 export default {
   name: "DashboardNavbar",
-  props: {
-    appName: {
-      default: "",
-      type: String
-    }
-  },
   methods: {
+    /**
+     * Get Posts of a Category
+     *
+     * @param { object } category
+     * @return { void }
+     */
     getCategoryPosts(category) {
       this.getCategoryOrTagPosts(category, null);
     },
+
+    /**
+     * Get Posts of a Tag
+     *
+     * @param { object } tag
+     * @return { void }
+     */
     getTagPosts(tag) {
       this.getCategoryOrTagPosts(null, tag);
     },
+
+    /**
+     * Get Category or Tag Posts
+     *
+     * @param { object } category
+     * @param { object } tag
+     * @return { void }
+     */
     getCategoryOrTagPosts(category = null, tag = null) {
       if(this.$route && this.$route.name == "Blog") {
         this.$router.push({ name: "DashboardContent" });
@@ -70,7 +85,7 @@ export default {
       this.$store.dispatch("getPosts", {
         number: 25,
         offset: null,
-        page: null,
+        page: 1,
         category: (category && category.slug) || null,
         tag: (tag && tag.slug) || null,
         newArr: true
@@ -78,12 +93,17 @@ export default {
     }
   },
   computed: {
+    /* Return Logo Path */
     getLogoPath() {
       return "/img/trueblogger.png";
     },
+
+    /* Return Categories */
     categories() {
       return this.$store.getters.categories;
     },
+
+    /* Return Tags */
     tags() {
       return this.$store.getters.tags;
     }

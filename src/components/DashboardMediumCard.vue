@@ -3,7 +3,13 @@
     <v-card flat v-ripple>
       <v-row>
         <v-col class="py-0 py-lg-2" cols="12">
-          <v-img :src="post.featured_image" max-height="250" aspect-ratio="2" class="rounded pointer" @click="redirectToBlog(post.ID)">
+          <v-img
+            :src="post.featured_image"
+            max-height="250"
+            aspect-ratio="2"
+            class="rounded pointer"
+            @click="redirectToBlog(post.ID)"
+          >
             <template v-slot:placeholder>
               <v-sheet color="grey lighten-4" class="px-3 pt-3 pb-3 fill-height">
                 <v-skeleton-loader class="mx-auto" height="400" type="image"></v-skeleton-loader>
@@ -50,10 +56,22 @@ export default {
     }
   },
   methods: {
+    /**
+     * Redirects to Blog
+     *
+     * @param { number } postID
+     * @return { void }
+     */
     redirectToBlog(postID) {
-      this.$router.push({ name: 'Blog', params: { blogId: postID } });
-      // :to="{ name: 'Blog', params: { blogId: post.ID }}"
+      this.$router.push({ name: "Blog", params: { blogId: postID } });
     },
+
+    /**
+     * Return the distance between the given date and now in words.
+     *
+     * @param { string } date
+     * @return { Date }
+     */
     formatDate(date) {
       return Utils.formatDistance(date);
     }

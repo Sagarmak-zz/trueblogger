@@ -140,7 +140,7 @@ export default {
      * Get Recommended Array of Posts
      *
      * @param { number } id
-     * @return { Array<Post> }
+     * @return { void }
      */
     getRecommendedPosts() {
       let requests = [];

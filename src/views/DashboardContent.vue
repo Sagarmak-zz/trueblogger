@@ -31,6 +31,19 @@ export default {
     };
   },
   methods: {
+    /**
+     * Get Posts
+     * either top N number of Posts
+     * or using offset(Load More...)
+     *
+     * @param { number } postID
+     * @param { number } offset
+     * @param { number } page
+     * @param { string } category
+     * @param { string } tag
+     * @param { boolean } newArr
+     * @return { void }
+     */
     getPosts(number = 20, offset = 0, page = 1, category = null, tag = null, newArr = false) {
       this.$store
         .dispatch("getPosts", {
@@ -45,6 +58,13 @@ export default {
           this.loadingMore = false;
         });
     },
+
+    /**
+     * Get Posts based on offset
+     *
+     * @param {}
+     * @return {}
+     */
     loadMorePosts() {
       this.loadingMore = true;
       // No of posts, Offset, page Number
@@ -52,21 +72,27 @@ export default {
     }
   },
   computed: {
+    /* Return Posts Array */
     posts() {
       return this.$store.getters.posts;
     },
+    /* Return total number of posts */
     totalPosts() {
       return this.$store.getters.totalPosts;
     },
+    /* Return Load More button */
     showLoadMore() {
       return this.totalPosts > this.posts.length;
     },
+    /* Returns true posts have data */
     isFullPageLoading() {
       return !this.posts.length;
     },
+    /* Returns selected category */
     category() {
       return this.$store.getters.category;
     },
+    /* Returns selected tag */
     tag() {
       return this.$store.getters.tag;
     }

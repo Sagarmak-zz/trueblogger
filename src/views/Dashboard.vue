@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard fill-height">
-    <DashboardNavbar :app-name="appName" />
+    <DashboardNavbar />
 
     <v-main class="mb-5">
       <v-container class="mt-6">
@@ -12,7 +12,6 @@
 
 <script>
 import DashboardNavbar from "@/components/DashboardNavbar.vue";
-import config from "@/config.js";
 
 export default {
   name: "Home",
@@ -31,6 +30,14 @@ export default {
     this.getTags();
   },
   methods: {
+    /**
+     * Get Top N Posts
+     *
+     * @param { number } number
+     * @param { number } offset
+     * @param { number } page
+     * @return { void }
+     */
     getPosts(number = 20, offset = 0, page = 1) {
       this.$store.dispatch("getPosts", {
         number,
@@ -38,16 +45,25 @@ export default {
         page
       });
     },
+
+    /**
+     * Get Array of Categories
+     *
+     * @param {}
+     * @return { void }
+     */
     getCategories() {
       this.$store.dispatch("getCategories");
     },
+
+    /**
+     * Get Array of Tags
+     *
+     * @param {}
+     * @return { void }
+     */
     getTags() {
       this.$store.dispatch("getTags");
-    }
-  },
-  computed: {
-    appName() {
-      return config.appTitle();
     }
   }
 };
