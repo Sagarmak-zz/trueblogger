@@ -35,7 +35,7 @@
               max-width="344"
               @click="redirectToRecommendedBlog(post.ID)"
             >
-              <v-img :src="post.post_thumbnail && post.post_thumbnail.URL" height="200px"></v-img>
+              <v-img :src="post.post_thumbnail && post.post_thumbnail.URL" height="200px" />
               <div class="text-h6 font-weight-medium pa-4" v-html="post.title"></div>
               <v-card-subtitle class="pt-0" v-html="post.excerpt"></v-card-subtitle>
             </v-card>

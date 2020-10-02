@@ -1,9 +1,9 @@
 <template>
   <v-col cols="12" :xs="12" :sm="6" :md="6" class="mt-4 pr-4 py-4">
-    <v-card flat :to="{ name: 'Blog', params: { blogId: post.ID }}">
+    <v-card flat v-ripple>
       <v-row>
         <v-col class="py-0 py-lg-2" cols="12">
-          <v-img :src="post.featured_image" max-height="250" aspect-ratio="2" class="rounded">
+          <v-img :src="post.featured_image" max-height="250" aspect-ratio="2" class="rounded pointer" @click="redirectToBlog(post.ID)">
             <template v-slot:placeholder>
               <v-sheet color="grey lighten-4" class="px-3 pt-3 pb-3 fill-height">
                 <v-skeleton-loader class="mx-auto" height="400" type="image"></v-skeleton-loader>
@@ -12,7 +12,7 @@
           </v-img>
         </v-col>
         <v-col cols="12" class="py-0">
-          <div class="px-4">
+          <div class="px-4 pointer" @click="redirectToBlog(post.ID)">
             <div class="text-h5 pt-4 pb-2 font-weight-medium" v-html="post.title"></div>
             <div class="text-caption d-flex align-center">
               <span>{{ formatDate(post.date) }}</span>
@@ -29,8 +29,9 @@
             </div>
           </div>
           <div
-            class="text-body-2 text-sm-body-2 text-md-subtitle-2 text-lg-subtitle-1 text-xl-h6 pa-4 py-sm-1 py-md-3 py-lg-4 py-xl-6"
+            class="text-body-2 text-sm-body-2 text-md-subtitle-2 text-lg-subtitle-1 text-xl-h6 pa-4 py-sm-1 py-md-3 py-lg-4 py-xl-6 pointer"
             v-html="post.excerpt"
+            @click="redirectToBlog(post.ID)"
           ></div>
         </v-col>
       </v-row>
@@ -49,6 +50,10 @@ export default {
     }
   },
   methods: {
+    redirectToBlog(postID) {
+      this.$router.push({ name: 'Blog', params: { blogId: postID } });
+      // :to="{ name: 'Blog', params: { blogId: post.ID }}"
+    },
     formatDate(date) {
       return Utils.formatDistance(date);
     }
