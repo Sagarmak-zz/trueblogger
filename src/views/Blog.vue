@@ -17,8 +17,8 @@
           <v-img
             :src="thumbnailURL"
             lazy-src="https://place-hold.it/700x387"
-            height="387"
-            width="700"
+            max-height="387"
+            max-width="700"
           />
         </div>
         <div class="content my-4 text-subtitle-1" v-html="postContent"></div>

@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Dashboard from "../views/Dashboard.vue";
-import DashboardContent from "../views/DashboardContent.vue";
-import Blog from "../views/Blog.vue";
+const Dashboard = () => import(/* webpackChunkName: 'dashboard' */ "../views/Dashboard.vue");
+const DashboardContent = () => import(/* webpackChunkName: 'dashboard' */ "../views/DashboardContent.vue");
+const Blog = () => import(/* webpackChunkName: 'blog' */ "../views/Blog.vue");
 
 Vue.use(VueRouter);
 
