@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="/"><img src="https://arminc.ga/resources/autoexec/arminc_autoexec.png" alt="ArminC AutoExec"></a>
+  <a href="/"><img src="public/img/trueblogger%20github%20logo.png" alt="ArminC AutoExec"></a>
 </h1>
 
 <h4 align="center">Get all your truecaller blogs at one place.</h4>
@@ -19,7 +19,7 @@
 
 Desktop App  Login         |  Desktop App Open | Web App  computer  hard drives       |  Web App computer hard drives Open
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="https://github.com/Sagarmak/trueblogger/blob/master/public/img/trueblogger.png" title="Desktop App  Login " width="100%"> |<img src="https://raw.githubusercontent.com/supunlakmal/thismypc/master/thisMyPCWeb/src/assets/images/screen/app-home.PNG" title="Desktop App Open" width="100%">|<img src="https://raw.githubusercontent.com/supunlakmal/thismypc/master/thisMyPCWeb/src/assets/images/screen/web-system.PNG" title="Web App  PC  Drivers" width="100%"> |<img src="https://raw.githubusercontent.com/supunlakmal/thismypc/master/thisMyPCWeb/src/assets/images/screen/web-system.PNG" title="Web App  PC  Drivers" width="100%">
+<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/home.png" title="Home Page " width="100%"> |<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/menu.png" title="Home page with Menu" width="100%">|<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/blog.png" title="Blog Post Page" width="100%"> |<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/related.png" title="Related Blog Posts" width="100%">
 
 ## Folder Structure
 
