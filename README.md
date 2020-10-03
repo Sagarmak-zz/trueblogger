@@ -17,7 +17,7 @@
 
 ## App Screenshots
 
-Desktop App  Login         |  Desktop App Open | Web App  computer  hard drives       |  Web App computer hard drives Open
+Home Page      |  Home Page with Menu | Blog Post Page       |  Related Blog Posts
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 <img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/home.png" title="Home Page " width="100%"> |<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/menu.png" title="Home page with Menu" width="100%">|<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/blog.png" title="Blog Post Page" width="100%"> |<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/related.png" title="Related Blog Posts" width="100%">
 
