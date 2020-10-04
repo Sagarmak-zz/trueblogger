@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="/"><img src="public/img/trueblogger%20github%20logo.png" alt="ArminC AutoExec"></a>
+  <a href="/"><img src="https://res.cloudinary.com/sagarmak/image/upload/v1601839006/trueblogger_github_logo_aokrje.png" alt="trueblogger"></a>
 </h1>
 
 <h4 align="center">Get all your truecaller blogs at one place.</h4>
@@ -20,7 +20,7 @@
 
 Home Page      |  Home Page with Menu | Blog Post Page       |  Related Blog Posts
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/home.png" title="Home Page " width="100%"> |<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/menu.png" title="Home page with Menu" width="100%">|<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/blog.png" title="Blog Post Page" width="100%"> |<img src="https://github.com/Sagarmak/trueblogger/blob/master/src/assets/related.png" title="Related Blog Posts" width="100%">
+<img src="https://res.cloudinary.com/sagarmak/image/upload/v1601839007/home_m6npdo.png" title="Home Page " width="100%"> |<img src="https://res.cloudinary.com/sagarmak/image/upload/v1601839007/menu_j2ybo0.png" title="Home page with Menu" width="100%">|<img src="https://res.cloudinary.com/sagarmak/image/upload/v1601839006/blog_sddzhk.png" title="Blog Post Page" width="100%"> |<img src="https://res.cloudinary.com/sagarmak/image/upload/v1601839007/related_dbn8yh.png" title="Related Blog Posts" width="100%">
 
 ## Folder Structure
 
