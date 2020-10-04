@@ -5,7 +5,7 @@
 
 <h4 align="center">Get all your truecaller blogs at one place.</h4>
 
-> Trueblogger provides a neat, user-friendly and performant web interface that categorizes the blogs as per interest of the reader.
+> Trueblogger provides a neat, user-friendly and performant web interface that categorizes the blogs as per the interests of the reader.
 
 #### Live Link: [trueblogger.netlify.app](https://trueblogger.netlify.app)
 
@@ -27,7 +27,7 @@ Home Page      |  Home Page with Menu | Blog Post Page       |  Related Blog Pos
     ├── public
     ├── src
 	     ├── /components    # reusable .vue files
-	     ├── /packages      # nom packages config files
+	     ├── /packages      # npm packages config files
 	     ├── /plugins       # vue plugins' config files here
 	     ├── /router        # vue ecosystem's routing lib
 	     ├── /store         # vue ecosystem's state mgmt lib
