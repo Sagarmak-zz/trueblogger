@@ -5,15 +5,16 @@
 
 <h4 align="center">Get all your truecaller blogs at one place.</h4>
 
-> Trueblogger provides a neat web interface that shows the [truecaller.blog](https://truecaller.blog/) blog posts with categories and top 10 tags. It uses Wordpress public API to get the posts and other important details.
+> Trueblogger provides a neat, user-friendly and performant web interface that categorizes the blogs as per interest of the reader.
 
 #### Live Link: [trueblogger.netlify.app](https://trueblogger.netlify.app)
 
 ## Key Features
-- list most recent posts upfront and navigate to older posts
-- a menu that lets you navigate through posts of a particular `Category` or a `Tag`
-- view a post
-- show related blogs
+- Easy navigation & adaptable usage
+- Shows related blogs on the basis of views
+- A separate menu for blog catergories & tags
+- Responsive on all devices
+- Google Pagespeed insights score of 96
 
 ## App Screenshots
 
